@@ -1,6 +1,7 @@
 # LruMemoryStore
 
-TODO: Write a gem description
+An extremely simple LRU Memory Store designed to replace the Rails MemoryStore with an LRU cache eviction strategy.
+Currently, Rails 2.x only.
 
 ## Installation
 
@@ -18,7 +19,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add this line to environment.rb for a 100 slot cache:
+
+    config.cache_store :lru_memory_store, 100
 
 ## Contributing
 

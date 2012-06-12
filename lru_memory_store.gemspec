@@ -4,8 +4,8 @@ require File.expand_path('../lib/lru_memory_store/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Brendon McLean"]
   gem.email         = ["brendon@intellectionsoftware.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Like the Rails memory store, except size limit with LRU eviction}
+  gem.summary       = %q{Like the Rails memory store, except size limit with LRU eviction}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
@@ -14,4 +14,8 @@ Gem::Specification.new do |gem|
   gem.name          = "lru_memory_store"
   gem.require_paths = ["lib"]
   gem.version       = LruMemoryStore::VERSION
+
+  gem.add_development_dependency "rspec"
+  gem.add_development_dependency "rcov"
+  gem.add_dependency "activesupport", '~> 2.3'
 end

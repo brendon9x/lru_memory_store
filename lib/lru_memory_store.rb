@@ -1,5 +1,7 @@
 require "lru_memory_store/version"
 
-module LruMemoryStore
-  # Your code goes here...
+module ActiveSupport
+  module Cache
+    autoload :LruMemoryStore, 'active_support/cache/lru_memory_store'
+  end
 end
