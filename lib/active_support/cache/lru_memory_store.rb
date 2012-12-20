@@ -6,12 +6,10 @@ module ActiveSupport
       attr_reader :store, :num_slots
 
       # Returns a memory store with LRU eviction.
-      #
-      # @param num_slots - number of slots in the cache. Default is 10
-      def initialize(num_slots = 10)
+      def initialize(options = {})
         super
         @store = ActiveSupport::OrderedHash.new
-        @num_slots = num_slots
+        @num_slots = options[:num_slots] || 10
       end
 
       # Inserts the value into the cache collection or updates the existing value.

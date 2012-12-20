@@ -10,14 +10,14 @@ module ActiveSupport
         end
 
         it "can num_slots argument" do
-          store = ActiveSupport::Cache.lookup_store :lru_memory_store, 10
+          store = ActiveSupport::Cache.lookup_store :lru_memory_store, :num_slots => 10
           store.num_slots.should == 10
         end
       end
 
       describe :caching do
         before :each do
-          @store = ActiveSupport::Cache.lookup_store :lru_memory_store, 2
+          @store = ActiveSupport::Cache.lookup_store :lru_memory_store, :num_slots => 2
         end
 
         it "should cache up to the number of slots" do
