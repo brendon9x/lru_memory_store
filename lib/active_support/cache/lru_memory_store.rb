@@ -9,6 +9,7 @@ module ActiveSupport
       #
       # @param num_slots - number of slots in the cache. Default is 10
       def initialize(num_slots = 10)
+        super
         @store = ActiveSupport::OrderedHash.new
         @num_slots = num_slots
       end
